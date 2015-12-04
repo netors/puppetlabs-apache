@@ -43,8 +43,8 @@
   <%- if @ssl_openssl_conf_cmd -%>
   SSLOpenSSLConfCmd       <%= @ssl_openssl_conf_cmd %>
   <%- end -%>
-
-  <% if @ssl_proxyengine -%>
+<% end -%>
+<% if @ssl_proxyengine -%>
   ## SSLProxy* directives
   SSLProxyEngine On
 
@@ -96,6 +96,4 @@
   <%- if @ssl_proxy_verify_depth -%>
   SSLProxyVerifyDepth <%= @ssl_proxy_verify_depth %>
   <%- end -%>
-  <%- end -%>
-
-<% end -%>
+<%- end -%>
