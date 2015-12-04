@@ -43,4 +43,59 @@
   <%- if @ssl_openssl_conf_cmd -%>
   SSLOpenSSLConfCmd       <%= @ssl_openssl_conf_cmd %>
   <%- end -%>
+
+  <% if @ssl_proxyengine -%>
+  ## SSLProxy* directives
+  SSLProxyEngine On
+
+  <%- if @ssl_proxy_ssl_ca -%>
+  SSLProxyCACertificateFile "<%= @ssl_proxy_ssl_ca -%>"
+  <%- end -%>
+  <%- if @ssl_proxy_certs_dir && @ssl_proxy_certs_dir != '' -%>
+  SSLProxyCACertificatePath "<%= @ssl_proxy_certs_dir %>"
+  <%- end -%>
+  <%- if @ssl_proxy_crl_check && scope.function_versioncmp([@apache_version, '2.4']) >= 0 -%>
+  SSLProxyCARevocationCheck "<%= @ssl_proxy_crl_check -%>"
+  <%- end -%>
+  <%- if @ssl_proxy_crl -%>
+  SSLProxyCARevocationFile "<%= @ssl_proxy_crl -%>"
+  <%- end -%>
+  <%- if @ssl_proxy_crl_path -%>
+  SSLProxyCARevocationPath "<%= @ssl_proxy_crl_path -%>"
+  <%- end -%>
+  <%- if @ssl_proxy_checkpeercn -%>
+  SSLProxyCheckPeerCN On
+  <%- else -%>
+  SSLProxyCheckPeerCN Off
+  <%- end -%>
+  <%- if @ssl_proxy_checkpeerexpire -%>
+  SSLProxyCheckPeerExpire On
+  <%- else -%>
+  SSLProxyCheckPeerExpire Off
+  <%- end -%>
+  <%- if @ssl_proxy_checkpeername -%>
+  SSLProxyCheckPeerName On
+  <%- else -%>
+  SSLProxyCheckPeerName Off
+  <%- end -%>
+  <%- if @ssl_proxy_cipher -%>
+  SSLProxyCipherSuite <%= @ssl_proxy_cipher %>
+  <%- end -%>
+  <%- if @ssl_proxy_mc_chain_file -%>
+  SSLProxyMachineCertificateChainFile "<%= @ssl_proxy_mc_chain_file -%>"
+  <%- end -%>
+  <%- if @ssl_proxy_mc_path -%>
+  SSLProxyMachineCertificatePath "<%= @ssl_proxy_mc_path -%>"
+  <%- end -%>
+  <%- if @ssl_proxy_protocol -%>
+  SSLProxyProtocol <%= [@ssl_proxy_protocol].flatten.compact.join(' ') %>
+  <%- end -%>
+  <%- if @ssl_proxy_verify -%>
+  SSLProxyVerify <%= @ssl_proxy_verify %>
+  <%- end -%>
+  <%- if @ssl_proxy_verify_depth -%>
+  SSLProxyVerifyDepth <%= @ssl_proxy_verify_depth %>
+  <%- end -%>
+  <%- end -%>
+
 <% end -%>

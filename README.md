@@ -3187,12 +3187,12 @@ Sets the [SSLProxyMachineCertificateFile](http://httpd.apache.org/docs/current/m
 ~~~
 
 ##### `ssl_proxy_check_peer_cn`
- 
+
 Sets the [SSLProxyMachinePeerCN](http://httpd.apache.org/docs/current/mod/mod_ssl.html#sslproxycheckpeercn) directive, which specified whether the remote server certificate's CN field is compared against the hostname of the request URL .  Defaults to 'undef'.
 
 
 ##### `ssl_proxy_check_peer_name`
- 
+
 Sets the [SSLProxyMachinePeerName](http://httpd.apache.org/docs/current/mod/mod_ssl.html#sslproxycheckpeername) directive, which specified whether the remote server certificate's CN field is compared against the hostname of the request URL .  Defaults to 'undef'.
 
 ##### `ssl_options`
@@ -3224,6 +3224,63 @@ Sets the [SSLOpenSSLConfCmd](http://httpd.apache.org/docs/current/mod/mod_ssl.ht
 ##### `ssl_proxyengine`
 
 Specifies whether or not to use [SSLProxyEngine](http://httpd.apache.org/docs/current/mod/mod_ssl.html#sslproxyengine). Valid values are 'true' and 'false'. Defaults to 'false'.
+
+
+##### `ssl_proxy_ssl_ca`
+
+Sets the [SSLProxyCACertificateFile](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycacertificatefile) directive.
+
+##### `ssl_proxy_certs_dir`
+
+Sets the [SSLProxyCACertificatePath](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycacertificatepath) directive.
+
+##### `ssl_proxy_crl_check`
+
+Sets the [SSLProxyCARevocationCheck](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycarevocationcheck) directive.
+
+##### `ssl_proxy_crl`
+
+Sets the [SSLProxyCARevocationFile](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycarevocationfile) directive.
+
+##### `ssl_proxy_crl_path`
+
+Sets the [SSLProxyCARevocationPath](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycarevocationpath) directive.
+
+##### `ssl_proxy_checkpeercn`
+
+Sets the [SSLProxyCheckPeerCN](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycheckpeercn) directive.
+
+##### `ssl_proxy_checkpeerexpire`
+
+Sets the [SSLProxyCheckPeerExpire](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycheckpeerexpire) directive.
+
+##### `ssl_proxy_checkpeername`
+
+Sets the [SSLProxyCheckPeerName](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxycheckpeername) directive.
+
+##### `ssl_proxy_cipher`
+
+Sets the [SSLProxyCipherSuite](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslproxyciphersuite) directive.
+
+##### `ssl_proxy_mc_chain_file`
+
+Sets the [SSLProxyMachineCertificateChainFile]() directive.
+
+##### `ssl_proxy_mc_path`
+
+Sets the [SSLProxyMachineCertificatePath]() directive.
+
+##### `ssl_proxy_protocol`
+
+Sets the [SSLProxyProtocol]() directive.
+
+##### `ssl_proxy_verify`
+
+Sets the [SSLProxyVerify]() directive.
+
+##### `ssl_proxy_verify_depth`
+
+Sets the [SSLProxyVerifyDepth]() directive.
 
 ####Define: FastCGI Server
 
